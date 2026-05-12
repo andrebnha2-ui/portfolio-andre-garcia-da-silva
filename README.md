@@ -1,5 +1,5 @@
-# [Seu Nome Completo]
-> Estudante de [Nome do Curso - ex: Ciência da Computação]
+# [André Garcia da Silva]
+> Estudante de Ciência da Computação
  
 ---
  
