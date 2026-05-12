@@ -36,15 +36,12 @@ Atualmente cursando o [Xº] período de [Nome do Curso] na [Nome da Instituiçã
  
 ### 📂 Portfólio de Projetos
  
-#### 🗃️ Modelagem de Banco de Dados
-| Projeto | Descrição | Link |
-| :--- | :--- | :---: |
-| **Sistema de Gestão Escolar** | Modelagem ER e Scripts SQL para uma instituição de ensino. | [Ver Projeto](./projeto-banco-dados/) |
- 
 #### 🤖 Inteligência Artificial
 | Projeto | Descrição | Link |
 | :--- | :--- | :---: |
-| **Predição de Churn** | Algoritmo de classificação para prever saída de clientes. | [Ver Projeto](./projeto-ia-churn/) |
+| **Laboratório de Classificação Visual** | Treinamento de modelo de visão computacional focado na identificação de vieses algorítmicos e análise de impactos sociais. | [Ver Projeto](./projeto-laboratorio-de-classificacao-visual/) |
+| **Engenharia Reversa com IA** | Reconstrução Full-Stack de aplicações a partir da descrição lógica e funcional assistida por IA generativa. | [Ver Projeto](./projeto-laboratorio-de-engenharia-reversa/) |
+| **Desenvolvimento de MVP+** | Evolução de protótipo para produto autoral com integração Firebase, design personalizado e implementação de novos recursos funcionais. | [Ver Projeto](./projeto-do-clone-ao-produto-minimo-viavel-mvp/) |
  
 ---
  
