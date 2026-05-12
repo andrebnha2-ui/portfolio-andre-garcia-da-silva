@@ -1,0 +1,50 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: history
+    // Document ID: auto-generated
+    // Fields:
+    //   - uid: string (required) - User ID
+    //   - type: string (required, ['file', 'url']) - Analysis type
+    //   - source: string (required) - File name or URL
+    //   - timestamp: timestamp (required) - When it happened
+    //   - metadataCount: number (optional) - Tags found
+    //
+    // ===============================================================
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidHistory(data) {
+      return data.keys().hasAll(['uid', 'type', 'source', 'timestamp', 'metadata']) &&
+             data.uid == request.auth.uid &&
+             data.type in ['file', 'url'] &&
+             data.source is string && data.source.size() > 0 && data.source.size() < 1000 &&
+             data.timestamp is timestamp &&
+             data.metadata is map;
+    }
+
+    match /history/{historyId} {
+      // Users can only see their own history
+      allow read: if isAuthenticated() && isOwner(resource.data.uid);
+      
+      // Users can create their own history records
+      allow create: if isAuthenticated() && isValidHistory(request.resource.data);
+      
+      // History is immutable
+      allow update, delete: if false;
+    }
+  }
+}

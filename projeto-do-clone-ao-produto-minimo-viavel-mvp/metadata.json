@@ -1,0 +1,5 @@
+{
+  "name": "Remix: Exif Info.org Clone",
+  "description": "An OSINT tool for analyzing image and URL metadata, inspired by exifinfo.org.",
+  "requestFramePermissions": []
+}
